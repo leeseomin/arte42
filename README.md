@@ -76,6 +76,9 @@ bash main.sh
  
 ### make animated png result
 ```
+
+parallel convert {} -resize 3000x3000 {.}.png ::: *.* 
+
 ffmpeg -framerate 1 -pattern_type glob -i '*.png' \
   -c:v libx264 out.mp4
   
